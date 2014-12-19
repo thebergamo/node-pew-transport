@@ -1,0 +1,29 @@
+{
+  "name": "pew-transport",
+  "version": "1.0.0",
+  "description": "TCP transport for binary files never be so easy.",
+  "main": "./lib/transport.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcosbergamo/node-pew-transport.git"
+  },
+  "keywords": [
+    "tcp",
+    "transport",
+    "binary",
+    "carrier",
+    "buffer"
+  ],
+  "author": "Marcos Bérgamo <marcos@thedon.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcosbergamo/node-pew-transport/issues"
+  },
+  "homepage": "https://github.com/marcosbergamo/node-pew-transport",
+  "dependencies": {
+    "through2": "^0.6.3"
+  }
+}
