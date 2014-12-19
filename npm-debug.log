@@ -1,0 +1,106 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/mkdarkness/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz', '.' ]
+12 verbose tarball /home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz
+13 verbose folder .
+14 info prepublish pew-transport@1.0.0
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /home/mkdarkness/.npm/1f1177db-tar.lock
+17 silly lockFile 01f60e4a--pew-transport-1-0-0-package-tgz tar:///home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz
+18 verbose lock tar:///home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz /home/mkdarkness/.npm/01f60e4a--pew-transport-1-0-0-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 01f60e4a--pew-transport-1-0-0-package-tgz tar:///home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz
+22 silly lockFile 01f60e4a--pew-transport-1-0-0-package-tgz tar:///home/mkdarkness/.npm/pew-transport/1.0.0/package.tgz
+23 silly lockFile d463d73c--npm-pew-transport-1-0-0-package /home/mkdarkness/.npm/pew-transport/1.0.0/package
+24 verbose lock /home/mkdarkness/.npm/pew-transport/1.0.0/package /home/mkdarkness/.npm/d463d73c--npm-pew-transport-1-0-0-package.lock
+25 silly lockFile d463d73c--npm-pew-transport-1-0-0-package /home/mkdarkness/.npm/pew-transport/1.0.0/package
+26 silly lockFile d463d73c--npm-pew-transport-1-0-0-package /home/mkdarkness/.npm/pew-transport/1.0.0/package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'pew-transport',
+29 silly publish   version: '1.0.0',
+29 silly publish   description: 'TCP transport for binary files never be so easy.',
+29 silly publish   main: './lib/transport.js',
+29 silly publish   scripts: { test: 'mocha test' },
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/marcosbergamo/node-pew-transport.git' },
+29 silly publish   keywords: [ 'tcp', 'transport', 'binary', 'carrier', 'buffer' ],
+29 silly publish   author: { name: 'Marcos Bérgamo', email: 'marcos@thedon.com.br' },
+29 silly publish   license: 'MIT',
+29 silly publish   bugs: { url: 'https://github.com/marcosbergamo/node-pew-transport/issues' },
+29 silly publish   homepage: 'https://github.com/marcosbergamo/node-pew-transport',
+29 silly publish   dependencies: { through2: '^0.6.3' },
+29 silly publish   readme: 'node-pew-transport\n==================\n\nUsing the pew-transport you can send and receive binary files via an TCP socket connection.\n\npew-transport have 2 simples methods to prepare your files or messages and recovery it.\n\nSee below some examples of use:\n\n===Prepare buffer\n\n```javascript\n\nvar transport = require(\'pew-transport\');\n\nvar buffer = new Buffer(\'My first test\');\nvar buf = transport.prepare(buffer);\n\n//buf is ready to send using TCP connections;\n\n```\n\n===Received buffer\n\n```javascript\n\nvar transport = require(\'pew-transport\');\nvar net = require(\'net\');\n\nvar server = net.createServer(function(socket) {\n  socket.on(\'error\', function(){\n    console.log(\'server connected\');\n  });\n  socket.on(\'end\', function() {\n    console.log(\'server disconnected\');\n  });\n  socket.on(\'error\', function(err){\n    console.log(\'error: \'+err);\n  });\n\n  transport.recovery(socket, transport.DEFAULT_ENDIAN, function(buff){\n    //your buffer is recovered!\n    console.log(buff);\n  });\n\n});\n\nserver.listen(8080);\n\n```\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '3da9fe0b7406711c0e5e982a43200b609f5a4302',
+29 silly publish   _id: 'pew-transport@1.0.0',
+29 silly publish   _shasum: '1459738517da328d4edf4ba35d33a02685648e5b',
+29 silly publish   _from: '.' }
+30 verbose request where is /pew-transport
+31 verbose request registry http://registry.npmjs.com.br/
+32 verbose request id e4a4d2d584097b83
+33 verbose url raw /pew-transport
+34 verbose url resolving [ 'http://registry.npmjs.com.br/', './pew-transport' ]
+35 verbose url resolved http://registry.npmjs.com.br/pew-transport
+36 verbose request where is http://registry.npmjs.com.br/pew-transport
+37 info trying registry request attempt 1 at 11:43:45
+38 http PUT http://registry.npmjs.com.br/pew-transport
+39 http 403 http://registry.npmjs.com.br/pew-transport
+40 verbose headers { 'x-powered-by': 'Express',
+40 verbose headers   date: 'Fri, 19 Dec 2014 13:43:48 GMT',
+40 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=60',
+40 verbose headers   'content-length': '3748',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'x-served-by': 'cache-atl6228-ATL',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1418996628.679164,VS0,VE82',
+40 verbose headers   connection: 'close' }
+41 error publish Failed PUT 403
+42 error Error: forbidden cannot modify pre-existing version: 1.0.0
+42 error old={"name":"pew-transport","version":"1.0.0","description":"TCP transport for binary files never be so easy.","main":"./lib/transport.js","scripts":{"test":"mocha test"},"repository":{"type":"git","url":"https://github.com/marcosbergamo/node-pew-transport.git"},"keywords":["tcp","transport","binary","carrier","buffer"],"author":{"name":"Marcos Bérgamo","email":"marcos@thedon.com.br"},"license":"MIT","bugs":{"url":"https://github.com/marcosbergamo/node-pew-transport/issues"},"homepage":"https://github.com/marcosbergamo/node-pew-transport","dependencies":{"through2":"^0.6.3"},"gitHead":"b07dd7c64d4e679d12973d7198ac2a92dc1d5379","_id":"pew-transport@1.0.0","_shasum":"ae1ee65e016857095a02ac66c16b214906202285","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"marcosbergamo","email":"marcos@thedon.com.br"},"maintainers":[{"name":"marcosbergamo","email":"marcos@thedon.com.br"}],"dist":{"shasum":"ae1ee65e016857095a02ac66c16b214906202285","tarball":"http://registry.npmjs.org/pew-transport/-/pew-transport-1.0.0.tgz"}}
+42 error new={"name":"pew-transport","version":"1.0.0","description":"TCP transport for binary files never be so easy.","main":"./lib/transport.js","scripts":{"test":"mocha test"},"repository":{"type":"git","url":"https://github.com/marcosbergamo/node-pew-transport.git"},"keywords":["tcp","transport","binary","carrier","buffer"],"author":{"name":"Marcos Bérgamo","email":"marcos@thedon.com.br"},"license":"MIT","bugs":{"url":"https://github.com/marcosbergamo/node-pew-transport/issues"},"homepage":"https://github.com/marcosbergamo/node-pew-transport","dependencies":{"through2":"^0.6.3"},"readme":"node-pew-transport\u000a==================\u000a\u000aUsing the pew-transport you can send and receive binary files via an TCP socket connection.\u000a\u000apew-transport have 2 simples methods to prepare your files or messages and recovery it.\u000a\u000aSee below some examples of use:\u000a\u000a===Prepare buffer\u000a\u000a```javascript\u000a\u000avar transport = require('pew-transport');\u000a\u000avar buffer = new Buffer('My first test');\u000avar buf = transport.prepare(buffer);\u000a\u000a//buf is ready to send using TCP connections;\u000a\u000a```\u000a\u000a===Received buffer\u000a\u000a```javascript\u000a\u000avar transport = require('pew-transport');\u000avar net = require('net');\u000a\u000avar server = net.createServer(function(socket) {\u000a  socket.on('error', function(){\u000a    console.log('server connected');\u000a  });\u000a  socket.on('end', function() {\u000a    console.log('server disconnected');\u000a  });\u000a  socket.on('error', function(err){\u000a    console.log('error: '+err);\u000a  });\u000a\u000a  transport.recovery(socket, transport.DEFAULT_ENDIAN, function(buff){\u000a    //your buffer is recovered!\u000a    console.log(buff);\u000a  });\u000a\u000a});\u000a\u000aserver.listen(8080);\u000a\u000a```\u000a","readmeFilename":"README.md","gitHead":"3da9fe0b7406711c0e5e982a43200b609f5a4302","_id":"pew-transport@1.0.0","_shasum":"1459738517da328d4edf4ba35d33a02685648e5b","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"marcosbergamo","email":"marcos@thedon.com.br"},"maintainers":[{"name":"marcosbergamo","email":"marcos@thedon.com.br"}],"dist":{"shasum":"1459738517da328d4edf4ba35d33a02685648e5b","tarball":"http://registry.npmjs.com.br/pew-transport/-/pew-transport-1.0.0.tgz"}}: pew-transport
+42 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+42 error     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+42 error     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:236:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Linux 3.13.0-40-generic
+45 error command "/usr/bin/node" "/usr/bin/npm" "publish"
+46 error cwd /srv/nodeJS/node-pew-transport
+47 error node -v v0.10.33
+48 error npm -v 1.4.28
+49 verbose exit [ 1, true ]
