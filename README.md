@@ -7,7 +7,7 @@ pew-transport have 2 simples methods to prepare your files or messages and recov
 
 See below some examples of use:
 
-===Prepare buffer
+###Prepare buffer
 
 ```javascript
 
@@ -20,7 +20,7 @@ var buf = transport.prepare(buffer);
 
 ```
 
-===Received buffer
+###Received buffer
 
 ```javascript
 
