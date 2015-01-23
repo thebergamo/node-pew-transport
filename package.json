@@ -1,6 +1,6 @@
 {
   "name": "pew-transport",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TCP transport for binary files never be so easy.",
   "main": "./lib/transport.js",
   "scripts": {
